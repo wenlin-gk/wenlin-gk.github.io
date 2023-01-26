@@ -1,0 +1,44 @@
+site_name: wenlin的博客
+repo_name: wenlin-gk.github.io
+# 右上角图标的链接
+repo_url: https://github.com/wenlin-gk/wenlin-gk.github.io
+# 主页的链接
+site_url: https://wenlin-gk.github.io
+# 页面链接的前缀
+edit_uri: /wenlin-gk/wenlin-gk.github.io/tree/master/
+site_author: wenlin
+
+# # 记录用户访问信息
+# google_analytics:
+#   - 'UA-XXXXXXXX-X'
+#   - 'auto'
+
+nav:
+  - 工具:
+    - 构建github-pages.md
+
+# ================
+theme:
+  name: material
+  logo: img/favicon.ico
+  favicon: img/favicon.ico
+  language: zh
+  # 不使用google字体
+  # font: false
+  font:
+    text: 'Roboto'
+    code: 'Inconsolata'
+markdown_extensions:
+  - admonition
+  - codehilite
+#extra:
+#  disqus: wenlin-gk
+# # ================
+# theme:
+#   name: readthedocs
+# # ================
+# theme:
+#   name: windmill
+# # ================
+# theme:
+#   name: ivory
