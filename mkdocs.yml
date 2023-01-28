@@ -14,6 +14,11 @@ site_author: wenlin
 #   - 'auto'
 
 nav:
+  # - 规范理论:
+  #   - 网络:
+  #     - 计算机网络基础.md
+  #     - 网络相关应用以及问题.md
+  #   - 通用: 通用.md
   - 工具:
     - 构建github-pages.md
 
@@ -31,6 +36,10 @@ theme:
 markdown_extensions:
   - admonition
   - codehilite
+  - attr_list
+  - pymdownx.emoji:
+      emoji_index: !!python/name:materialx.emoji.twemoji
+      emoji_generator: !!python/name:materialx.emoji.to_svg
 #extra:
 #  disqus: wenlin-gk
 # # ================
