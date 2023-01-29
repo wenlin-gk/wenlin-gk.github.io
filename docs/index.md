@@ -1,4 +1,4 @@
- :stuck_out_tongue_closed_eyes: 亲爱的朋友，你好呀，我是文林，欢迎你来看我的博客。 :clap:  :clap:  :clap: 
+ :stuck_out_tongue_closed_eyes: 亲爱的朋友，你好，我是文林，欢迎你访问我的博客。 :clap:  :clap:  :clap: 
 
 <br><br><br><br><br><br><br><br><br>
 
