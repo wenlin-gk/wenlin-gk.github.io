@@ -2,22 +2,9 @@
 
 #### 工作经历
 
-**中兴通讯-AI云平台-后端开发　　　　　　　　　　　　　　　　　　　　2017.09-2022.12,上海**<br>　平台基于Linux＋Docker＋K8S，采用微服务架构，NFS存储。目标用户为AI算法工程师。<br>　典型使用场景：1．用户将数据集和训练脚本上传到平台，请求平台构建分布式GPU环境执行用户脚本，完成训练作业，实时回显Metrics信息，保存最终模型；2．用户请求平台将模型制作为应用，并对应用（如：在线翻译器）进行托管/发布/灰度升级。<br>　平台商用情况：3套商用，2套实验，1套公司使用。公司环境存储数据集在TB级；GPU卡平均占用率30％；稳定托管应用9个（包括：通信领域翻译[用户约1万，月活约4千]，基站故障分类）。<br>　平台组件按业务粗略分两类：①AI引擎，②平台管理。个人参与开发②类组件如下：
-*WebServer*：提供Web界面，采用Tomcat＋Spring＋SpringMVC＋Mybatis＋MySQL 架构实现。（其他后端Server采用SpringBoot或Tornado实现）
-<br>*APIServer*：统一接收REST请求，支持用户鉴权，License鉴权，转发。<br>
-*DatasetManager*：管理数据集。*DatasetServer*：数据传输服务，协议采用WebDAV。 *DataAgent*：支持远端数据的修改，删除。（采用多活部署，客户端LB；其他组件采用主备）<br>
-*DatasetGUIClient(负责)*：作为数据客户端，支持查看、上传、下载等数据集操作。（采用JavaFX＋生产消费模式＋多线程传输实现）<br>
-*TaskManager*：支持作业的调度和生命周期管理。<br>*RealTime*：支持监听 Kafka Metrics数据，将其写入Redis，定期持久化到MongoDB。支持前端通 过WebSocket拉取训练作业Metrics数据。<br>
-*AppManager*：支持应用的生命周期管理，托管和升级。（采用有限状态机实现）<br>
-*AppPortal*：作为托管应用的七层网关。采用Nginx-ingress-controller实现应用的注册和发现，Istio 实现流量的监控和控制。<br>
-*UserTenantQuotaManager*(负责)：支持用户租户的资源（GPU/CPU/内存/磁盘）占用量管理。 <br>*ResourceManager*：支持集群资源的调度和管理。
+**中兴通讯-AI云平台-后端开发　　　　　　　　　　　　　　　　　　　　2017.09-2022.12,上海**<br>　平台基于Linux＋Docker＋K8S，采用微服务架构，NFS存储。目标用户为AI算法工程师。<br>　典型使用场景：1．用户将数据集和训练脚本上传到平台，请求平台构建分布式GPU环境执行用户脚本，完成训练作业，实时回显Metrics信息，保存最终模型；2．用户请求平台将模型制作为应用，并对应用（如：在线翻译器）进行托管/发布/灰度升级。<br>　平台商用情况：3套商用，2套实验，1套公司使用。公司环境存储数据集在TB级；GPU卡平均占用率30％；稳定托管应用9个（包括：通信领域翻译[用户约1万，月活约4千]，基站故障分类）。<br>　平台组件按业务粗略分两类：①AI引擎，②平台管理。个人参与开发②类组件如下：<br>*WebServer*：提供Web界面，采用Tomcat＋Spring＋SpringMVC＋Mybatis＋MySQL 架构实现。（其他后端Server采用SpringBoot或Tornado实现）<br>*APIServer*：统一接收REST请求，支持用户鉴权，License鉴权，转发。<br>*DatasetManager*：管理数据集。*DatasetServer*：数据传输服务，协议采用WebDAV。 *DataAgent*：支持远端数据的修改，删除。（采用多活部署，客户端LB；其他组件采用主备）<br>*DatasetGUIClient(负责)*：作为数据客户端，支持查看、上传、下载等数据集操作。（采用JavaFX＋生产消费模式＋多线程传输实现）<br>*TaskManager*：支持作业的调度和生命周期管理。<br>*RealTime*：支持监听 Kafka Metrics数据，将其写入Redis，定期持久化到MongoDB。支持前端通 过WebSocket拉取训练作业Metrics数据。<br>*AppManager*：支持应用的生命周期管理，托管和升级。（采用有限状态机实现）<br>*AppPortal*：作为托管应用的七层网关。采用Nginx-ingress-controller实现应用的注册和发现，Istio 实现流量的监控和控制。<br>*UserTenantQuotaManager*(负责)：支持用户租户的资源（GPU/CPU/内存/磁盘）占用量管理。 <br>*ResourceManager*：支持集群资源的调度和管理。
 
-**中兴通讯-联邦学习-开源地址 [github.com/neursafe/federated-learning](https://github.com/neursafe/federated-learning)　2020.02-2022.12,上海**<br>　开源中长期目标：协同团队项目Adlik抢占AI生态位，成为Linux基金会LF AI旗下正式项目。<br>　典型部署形态：在云端以多微服务方式部署Server，在多个设备端以常驻进程方式部署Client。<br>　典型使用场景：用户向Server 发送训练作业请求，Server启动聚合器执行作业，聚合器将作业下
-发给设备端Client， Client执行训练，将训练后的模型参数上传到聚合器，Server进行聚合，经过多轮下发和聚合之后，得到训练后模型。该过程保证设备端数据的隐私安全。<br>　组件按关键技术粗略分三类：①聚合/安全/优化器算法，2支持多种运行时的SDK，③业务流程。个人参与开发③类组件如下：（技术栈 Python+Asyncio+gRPC）<br>
-*Client Selector*：支持 Client 的注册和管理，分配能参与训练作业的Client。<br>
-*Job Scheduler*：支持作业的调度和生命周期管理（作业由Coordinator和Client执行）。<br>*Coordinator*：支持下发作业给设备端Client，聚合Client上报的模型参数。<br>
-*Proxy* ：管理 Coordinator 和Client 之间的转发规则，提供反向代理功能。采用Nginx+Lua实现。<br>*Task Manager*：以进程方式常驻Client端，支持响应Coordinator的下发作业的调度和管理。主动向Server端注册并保持心跳。<br>
-*Task Executor*：支持 Client端执行作业，上报训练结果到Server端Coordinator。
+**中兴通讯-联邦学习-开源地址 [github.com/neursafe/federated-learning](https://github.com/neursafe/federated-learning)　2020.02-2022.12,上海**<br>　开源中长期目标：协同团队项目Adlik抢占AI生态位，成为Linux基金会LF AI旗下正式项目。<br>　典型部署形态：在云端以多微服务方式部署Server，在多个设备端以常驻进程方式部署Client。<br>　典型使用场景：用户向Server 发送训练作业请求，Server启动聚合器执行作业，聚合器将作业下发给设备端Client， Client执行训练，将训练后的模型参数上传到聚合器，Server进行聚合，经过多轮下发和聚合之后，得到训练后模型。该过程保证设备端数据的隐私安全。<br>　组件按关键技术粗略分三类：①聚合/安全/优化器算法，2支持多种运行时的SDK，③业务流程。个人参与开发③类组件如下：（技术栈 Python+Asyncio+gRPC）<br>*Client Selector*：支持 Client 的注册和管理，分配能参与训练作业的Client。<br>*Job Scheduler*：支持作业的调度和生命周期管理（作业由Coordinator和Client执行）。<br>*Coordinator*：支持下发作业给设备端Client，聚合Client上报的模型参数。<br>*Proxy* ：管理 Coordinator 和Client 之间的转发规则，提供反向代理功能。采用Nginx+Lua实现。<br>*Task Manager*：以进程方式常驻Client端，支持响应Coordinator的下发作业的调度和管理。主动向Server端注册并保持心跳。<br>*Task Executor*：支持 Client端执行作业，上报训练结果到Server端Coordinator。
 
 #### 自我评价
 
