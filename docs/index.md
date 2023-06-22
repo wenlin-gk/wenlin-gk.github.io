@@ -1,8 +1,7 @@
- :stuck_out_tongue_closed_eyes: 亲爱的朋友，你好，我是文林，欢迎你访问我的博客。 :clap:  :clap:  :clap: 
+该博客内容只记录在本地，线上不再更新。
 
-<br><br><br><br><br><br><br><br><br>
-
-!!! note ""
-    1.左侧是所有文章的索引，右侧是单篇的目录，左上角图标可以返回主页。<br>    2.望多指教。留言/提问的入口在[这里](https://github.com/wenlin-gk/wenlin-gk.github.io/issues)。
+原因如下：
+1.投入时间去更新，但是没有人从其中收益。
+2.我觉得有些非科学技术的内容放在本地更合适一些，以避免不必要的矛盾。
 
 <p align="right">来访人次：</p><img src="https://profile-counter.glitch.me/wenlin-gk/count.svg" align="right">
