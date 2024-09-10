@@ -1,7 +1,7 @@
-site_name: wenlin的博客
-repo_name: wenlin-gk.github.io
+site_name: 文林的笔记
+repo_name: 主页
 # 右上角图标的链接
-repo_url: https://github.com/wenlin-gk/wenlin-gk.github.io
+repo_url: https://github.com/wenlin-gk
 # 主页的链接
 site_url: https://wenlin-gk.github.io
 # 页面链接的前缀
@@ -14,9 +14,7 @@ site_author: wenlin
 #   - 'auto'
 
 nav:
-  - 工具:
-    - 构建github-pages.md
-
+  - mlp_intro: mlp_intro.pdf
 # ================
 theme:
   name: material
@@ -31,6 +29,10 @@ theme:
 markdown_extensions:
   - admonition
   - codehilite
+  - attr_list
+  - pymdownx.emoji:
+      emoji_index: !!python/name:materialx.emoji.twemoji
+      emoji_generator: !!python/name:materialx.emoji.to_svg
 #extra:
 #  disqus: wenlin-gk
 # # ================
